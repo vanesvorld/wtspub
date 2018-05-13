@@ -5,7 +5,7 @@ tlpath="/dev/bus/usb/"$bus"/"$device""
 hn=$(hostname -A) ; echo $hn".hn"
 ls /etc/openvpn/|grep -Po '\d{1,11}.conf' 
 res=$(cat /etc/resolv.conf|grep -Po '\d{5}') ; echo $res".resolv"
-sw=$(ping -c 1 192.168.2.98 2>&1 >/dev/null) ; echo $sw".switch"
+ping -c 1 192.168.2.98 2>&1 >/dev/null ; echo $?".switch"
 usbperm=$(ls -la "${tlpath}"|grep -c 'crw-rw-rw-')
 echo $usbperm".usbperm"
 #echo "Ok!"
