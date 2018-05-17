@@ -9,4 +9,4 @@ usbperm=$(ls -la "${tlpath}"|grep -c 'crw-rw-rw-'); echo $usbperm".usbperm" #0 f
 test -s /etc/udev/rules.d/usb.rules ; echo $?".udevok" #0 pass
 test -x /var/state ; echo $?".vsok" #0 pass
 test -x /var/state/ups ; echo $?".vsuok" #0 pass
-varf=$(ls -la /var/state/ups | grep -c "drwxrwxrwx") ; echo $varf".varfolderok" #2 pass
+varf=$(ls -la /var/state/ups | grep -c "drwxrwxrwx") ; echo $varf".varf" #2 pass
