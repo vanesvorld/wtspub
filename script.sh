@@ -1,6 +1,6 @@
 #!/bin/bash
-# header: tun, hn, ovpnconf, resolv, sw, usbperm, udev, vs, vsu, varf, rt
-st=$(date +%s)
+# header: tun, hn, ovpnconf, resolv, sw, usbperm, udev, vs, vsu, varf,
+#st=$(date +%s) # Provides little benefit
 bus=$(lsusb -d 09ae:4004 |grep -o -P 'Bus \K\d{3}') ; device=$(lsusb -d 09ae:4004 |grep -o -P 'Device \K\d{3}') ; tlpath="/dev/bus/usb/"$bus"/"$device"" 
 hn=$(hostname -A) ; echo $hn".hn,"
 ls /etc/openvpn/|grep -Po '\d{1,11}.conf' 
@@ -11,4 +11,6 @@ test -s /etc/udev/rules.d/usb.rules ; echo $?".udevok," #0 pass
 test -x /var/state ; echo $?".vsok," #0 pass
 test -x /var/state/ups ; echo $?".vsuok," #0 pass
 varf=$(ls -la /var/state/ups | grep -c "drwxrwxrwx") ; echo $varf".varf," #2 pass
-et=$(date +%s) ; rt=$((et-st)) ; echo "rt: "$rt","
+cat /proc/mdstat |grep super 
+df |grep /dev/
+#et=$(date +%s) ; rt=$((et-st)) ; echo "rt: "$rt","
