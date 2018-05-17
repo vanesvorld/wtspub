@@ -20,7 +20,9 @@ res=$(cat /etc/resolv.conf|grep -Po '\d{5}') ; echo $res".resolv,"
 
 #uptime
 
-cat ~/.xsessionrc |grep -c 't -d'
-cat ~/.xsessionrc |grep 'bin'
+#cat ~/.xsessionrc |grep -c 't -d'
+#cat ~/.xsessionrc |grep 'bin'
+
+cat /etc/ntp.conf |grep 'noquery'
 
 #et=$(date +%s) ; rt=$((et-st)) ; echo "rt: "$rt","
