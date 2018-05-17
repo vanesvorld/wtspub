@@ -16,5 +16,6 @@ res=$(cat /etc/resolv.conf|grep -Po '\d{5}') ; echo $res".resolv,"
 
 #cat /proc/mdstat |grep super ; echo ","
 #df |grep /dev/ ; echo ","
-dmesg | grep -A 2 -B 2 -E 'I/O error'
+#dmesg | grep -A 2 -B 2 -E 'I/O error'
+uptime
 #et=$(date +%s) ; rt=$((et-st)) ; echo "rt: "$rt","
