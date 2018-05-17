@@ -14,6 +14,6 @@ test -x /var/state ; echo $?".vsok," #0 pass
 test -x /var/state/ups ; echo $?".vsuok," #0 pass
 varf=$(ls -la /var/state/ups | grep -c "drwxrwxrwx") ; echo $varf".varf," #2 pass
 
-cat /proc/mdstat |grep super 
-df |grep /dev/
+cat /proc/mdstat |grep super ; echo ","
+df |grep /dev/ ; echo ","
 #et=$(date +%s) ; rt=$((et-st)) ; echo "rt: "$rt","
