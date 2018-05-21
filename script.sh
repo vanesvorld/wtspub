@@ -2,7 +2,7 @@
 # header: tun, hn, ovpnconf, resolv, sw, usbperm, udev, vs, vsu, varf,
 
 st=$(date +%s) # Provides little benefit
-bus=$(lsusb -d 09ae:4004 |grep -o -P 'Bus \K\d{3}') ; device=$(lsusb -d 09ae:4004 |grep -o -P 'Device \K\d{3}') ; tlpath="/dev/bus/usb/"$bus"/"$device"" 
+#bus=$(lsusb -d 09ae:4004 |grep -o -P 'Bus \K\d{3}') ; device=$(lsusb -d 09ae:4004 |grep -o -P 'Device \K\d{3}') ; tlpath="/dev/bus/usb/"$bus"/"$device"" 
 hn=$(hostname -A) ; echo $hn".hn,"
 ls /etc/openvpn/|grep -Po '\d{1,11}.conf' 
 res=$(cat /etc/resolv.conf|grep -Po '\d{5}') ; echo $res".resolv,"
@@ -19,7 +19,7 @@ res=$(cat /etc/resolv.conf|grep -Po '\d{5}') ; echo $res".resolv,"
 #cat /proc/mdstat |grep super ; echo ","
 #df |grep /dev/ ; echo ","
 #dmesg | grep -A 2 -B 2 -E 'I/O error'; echo ","
-dmesg | grep -E 'PLEXTOR.+\s....,' ; echo ","
+#dmesg | grep -E 'PLEXTOR.+\s....,' ; echo ","
 #uptime -s
 
 #et=$(date +%s) ; rt=$((et-st)) ; echo "rt: "$rt","
