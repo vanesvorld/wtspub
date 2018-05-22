@@ -1,2 +1,2 @@
 # wtspub
-WTS Public repo
+WTS Public repo - contains sterilized things that can be public
