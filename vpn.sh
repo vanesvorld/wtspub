@@ -16,7 +16,7 @@ fi
 #Begin other info
 echo "Need cam pw: " ; read cpw
 fo=$'102'
-echo "Need fourth octet: " ; read fo
+#echo "Need fourth octet: " ; read fo
 nw=$'192.168.2.'
 cmid=$'/axis-cgi/operator/param.cgi?action='
 # End other info
