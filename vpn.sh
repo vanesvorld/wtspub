@@ -11,10 +11,11 @@ if [[ $nsnhint = "" ]]; then
 	read -t 2 -p "Couldn't determine NSN. Please enter it now (2s)" -n 1 -r
 	#read nsn ; nsn=$(echo "$nsnhint")
 fi
-# End nsnhint
+#End nsnhint
 
-# Begin other info
+#Begin other info
 echo "Need cam pw: " ; read cpw
+fo=$'102'
 echo "Need fourth octet: " ; read fo
 nw=$'192.168.2.'
 cmid=$'/axis-cgi/operator/param.cgi?action='
